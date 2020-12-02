@@ -57,11 +57,10 @@ mod tests {
 pub fn solve_part_one<T>(input: T) -> i32
 where T : IntoIterator<Item = String>
 {
-    let mut numbers = input.into_iter()
+    let numbers = input.into_iter()
         .map(|s| s.parse::<i32>().unwrap())
+        .sorted()
         .collect::<Vec<i32>>();
-    
-    numbers.sort_unstable();
 
     for (outer_index, outer_number) in numbers.iter().enumerate() {
         for inner_number in &numbers[outer_index..] {
@@ -75,15 +74,15 @@ where T : IntoIterator<Item = String>
     0
 }
 
+use itertools::Itertools;
 
 pub fn solve_part_two<T>(input: T) -> i32
 where T : IntoIterator<Item = String>
 {
-    let mut numbers = input.into_iter()
+    let numbers = input.into_iter()
         .map(|s| s.parse::<i32>().unwrap())
+        .sorted()
         .collect::<Vec<i32>>();
-    
-    numbers.sort_unstable();
 
     for (outer_index, outer_number) in numbers.iter().enumerate() {
         for (mid_index, mid_number) in numbers[outer_index..].iter().enumerate() {

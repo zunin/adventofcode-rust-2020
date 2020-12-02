@@ -52,6 +52,7 @@ mod tests {
         );
     }
 }
+use itertools::Itertools;
 
 
 pub fn solve_part_one<T>(input: T) -> i32
@@ -73,8 +74,6 @@ where T : IntoIterator<Item = String>
     }
     0
 }
-
-use itertools::Itertools;
 
 pub fn solve_part_two<T>(input: T) -> i32
 where T : IntoIterator<Item = String>

@@ -55,7 +55,7 @@ mod tests {
 use itertools::Itertools;
 
 
-pub fn solve_part_one<T>(input: T) -> i32
+pub fn solve_part_one<'a, T>(input: T) -> i32
 where T : IntoIterator<Item = String>
 {
     let numbers = input.into_iter()

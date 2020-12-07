@@ -84,7 +84,7 @@ mod tests {
     #[test]
     fn part_two() {
         assert_eq!(
-            get_number_of_valid_passwords_strict_validation(get_input_txt().as_slice()), 0);
+            get_number_of_valid_passwords_strict_validation(get_input_txt().as_slice()), 140);
     }
 }
 
@@ -187,15 +187,6 @@ impl PassportData {
     }
 
     fn validate_passport_strict(&self) -> bool {
-        println!("{:?}", self);
-        println!("byr = {:?} is valid? {:?}", self.byr, self.validate_byr());
-        println!("iyr = {:?} is valid? {:?}", self.iyr, self.validate_iyr());
-        println!("eyr = {:?} is valid? {:?}", self.eyr, self.validate_eyr());
-        println!("hgt = {:?} is valid? {:?}", self.hgt, self.validate_hgt());
-        println!("hcl = {:?} is valid? {:?}", self.hcl, self.validate_hcl());
-        println!("ecl = {:?} is valid? {:?}", self.ecl, self.validate_ecl());
-        println!("pid = {:?} is valid? {:?}", self.pid, self.validate_pid());
-        println!();
 
         self.validate_byr()
             && self.validate_iyr()
